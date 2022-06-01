@@ -1,6 +1,11 @@
-
+import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+
+# if os.path.isfile("/app/.venv"):
+#     environ.Env.read_env(env_file="/app/.venv")
+# else:
+#     environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,7 +20,7 @@ SECRET_KEY = 'django-insecure-6uo6ggkt1g1@6d77+x071hzk68zz)+b-5t!(%8%&7l1d%$3*k*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
