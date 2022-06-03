@@ -1,1 +1,1 @@
-web: gunicorn portfolio.wsgi --/main -
+web: gunicorn portfolio.wsgi --index -
