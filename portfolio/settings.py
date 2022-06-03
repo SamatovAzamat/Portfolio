@@ -107,7 +107,7 @@ LANGUAGES = (
     ('ru', 'Russian')
 )
 
-LOCALE_PATHS = BASE_DIR / 'locale',
+LOCALE_PATHS = BASE_DIR / 'locales',
 
 TIME_ZONE = 'Asia/Tashkent'
 
