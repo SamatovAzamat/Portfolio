@@ -1,1 +1,1 @@
-web: gunicorn portfolio.wsgi --index -
+web: waitress-serve --port=8000 portfolio.wsgi:application
