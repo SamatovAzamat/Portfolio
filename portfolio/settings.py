@@ -1,9 +1,10 @@
+import django_heroku
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
-import django_heroku
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'..
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(file).resolve().parent.parent
 
 
@@ -25,16 +26,15 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django_heroku',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'django_heroku',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,4 +133,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+django_heroku.setting(locals())
