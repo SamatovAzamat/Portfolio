@@ -3,7 +3,7 @@ import os
 from django.utils.translation import gettext_lazy as _
 import django_heroku
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: BASE_DIR / 'subdir'..
 BASE_DIR = Path(file).resolve().parent.parent
 
 
