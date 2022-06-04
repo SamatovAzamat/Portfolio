@@ -1,4 +1,4 @@
-
+import django_heroku
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
@@ -17,7 +17,7 @@ SECRET_KEY = ['django-insecure-6uo6ggkt1g1@6d77+x071hzk68zz)+b-5t!(%8%&7l1d%$3*k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['azamat24.herokuapp.com', '127.0.0.1:']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django_heroku',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
