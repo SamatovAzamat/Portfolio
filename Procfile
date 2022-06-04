@@ -1,2 +1,2 @@
-
-web: gunicorn portfolio.wsgi --portfolio -
+realise: python manage.py migrate
+web: gunicorn config.wsgi
