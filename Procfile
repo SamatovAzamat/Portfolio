@@ -1,2 +1,1 @@
-
-web: gunicorn portfolio.wsgi
+web: gunicorn --bind 0.0.0.0:$PORT portfolio.wsgi:application
