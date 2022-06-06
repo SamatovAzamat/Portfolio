@@ -82,10 +82,10 @@
                 <p>
                 <div class="carousel-inner rounded-3">
                     {% for post in posts %}
-                        <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                            <img class="block-20 w-100" alt="..."
-                                 style="background-image: url('{{ post.image.url }}');"/>
-                        </div>
+                            <div class="carousel-item{% if forloop.counter == 0  %} active {% endif %}">
+                                <img class="block-20 w-100" alt="..."
+                                     src="{{ post.image.url }}"/>
+                            </div>
                     {% endfor %}
                 </div>
                 </p>
@@ -138,7 +138,6 @@
                                             nihil?</p>
                                         <p><a href="#" class="reply">Reply</a></p>
                                     </div>
-
                                 </li>
                             </ul>
                         </li>
@@ -188,7 +187,7 @@
                     <h3 class="heading-sidebar">Recent Blog</h3>
                     {% for post in posts %}
                         <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4"
+                            <a class="blog-img mr-4" href="{{ post.pk }}"
                                style="background-image: url('{{ post.image.url }}');">
                             </a>
                             <div class="text">
