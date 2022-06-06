@@ -2,9 +2,10 @@ from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
 import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(file).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -16,25 +17,30 @@ SECRET_KEY = ['django-insecure-6uo6ggkt1g1@6d77+x071hzk68zz)+b-5t!(%8%&7l1d%$3*k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'second',
     'main',
     'django_heroku'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware', #new
+    'django.contrib.sessions.middleware.SessionMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,4 +139,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.setting(locals())
+#New start
+db_from_venv = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_venv)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#New End
