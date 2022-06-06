@@ -1,8 +1,7 @@
-import django_heroku
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
-
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(file).resolve().parent.parent
@@ -17,7 +16,7 @@ SECRET_KEY = ['django-insecure-6uo6ggkt1g1@6d77+x071hzk68zz)+b-5t!(%8%&7l1d%$3*k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS=['*']
 
 
 # Application definition
@@ -26,15 +25,16 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django_heroku',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'django_heroku'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
