@@ -23,6 +23,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic', #New
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -104,13 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
-LANGUAGES = (
-    ('en', 'English'),
-    ('uz', 'Uzbek'),
-    ('ru', 'Russian')
-)
+# LANGUAGES = (
+#     ('en', 'English'),
+#     ('uz', 'Uzbek'),
+#     ('ru', 'Russian')
+# )
 
-LOCALE_PATHS = BASE_DIR / 'locales',
+# LOCALE_PATHS = BASE_DIR / 'locales',
 
 TIME_ZONE = 'Asia/Tashkent'
 
