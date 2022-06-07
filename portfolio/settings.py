@@ -104,11 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
-# LANGUAGES = (
-#     ('en', 'English'),
-#     ('uz', 'Uzbek'),
-#     ('ru', 'Russian')
-# )
+LANGUAGES = (
+    ('en', 'English'),
+    ('uz', 'Uzbek'),
+    ('ru', 'Russian')
+)
 
 # LOCALE_PATHS = BASE_DIR / 'locales',
 
